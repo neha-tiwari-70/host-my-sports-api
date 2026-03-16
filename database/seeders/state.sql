@@ -1,0 +1,48 @@
+-- name: create-states-table
+CREATE TABLE IF NOT EXISTS states (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    state_code VARCHAR(10) NOT NULL,
+    country_id INT NOT NULL, 
+    country_code VARCHAR(10) NOT NULL,
+    type VARCHAR(50) DEFAULT 'state' NOT NULL CHECK (type IN ('state','union territory'))
+);
+
+-- name: insert-states
+INSERT INTO states (name, country_id, country_code, state_code, type) VALUES
+('Andaman and Nicobar Islands', 101, 'IN', 'AN', 'union territory'),
+('Andhra Pradesh', 101, 'IN', 'AP', 'state'),
+('Arunachal Pradesh', 101, 'IN', 'AR', 'state'),
+('Assam', 101, 'IN', 'AS', 'state'),
+('Bihar', 101, 'IN', 'BR', 'state'),
+('Chandigarh', 101, 'IN', 'CH', 'union territory'),
+('Chhattisgarh', 101, 'IN', 'CT', 'state'),
+('Dadra and Nagar Haveli and Daman and Diu', 101, 'IN', 'DH', 'union territory'),
+('Delhi', 101, 'IN', 'DL', 'union territory'),
+('Goa', 101, 'IN', 'GA', 'state'),
+('Gujarat', 101, 'IN', 'GJ', 'state'),
+('Haryana', 101, 'IN', 'HR', 'state'),
+('Himachal Pradesh', 101, 'IN', 'HP', 'state'),
+('Jammu and Kashmir', 101, 'IN', 'JK', 'union territory'),
+('Jharkhand', 101, 'IN', 'JH', 'state'),
+('Karnataka', 101, 'IN', 'KA', 'state'),
+('Kerala', 101, 'IN', 'KL', 'state'),
+('Ladakh', 101, 'IN', 'LA', 'union territory'),
+('Lakshadweep', 101, 'IN', 'LD', 'union territory'),
+('Madhya Pradesh', 101, 'IN', 'MP', 'state'),
+('Maharashtra', 101, 'IN', 'MH', 'state'),
+('Manipur', 101, 'IN', 'MN', 'state'),
+('Meghalaya', 101, 'IN', 'ML', 'state'),
+('Mizoram', 101, 'IN', 'MZ', 'state'),
+('Nagaland', 101, 'IN', 'NL', 'state'),
+('Odisha', 101, 'IN', 'OR', 'state'),
+('Puducherry', 101, 'IN', 'PY', 'union territory'),
+('Punjab', 101, 'IN', 'PB', 'state'),
+('Rajasthan', 101, 'IN', 'RJ', 'state'),
+('Sikkim', 101, 'IN', 'SK', 'state'),
+('Tamil Nadu', 101, 'IN', 'TN', 'state'),
+('Telangana', 101, 'IN', 'TG', 'state'),
+('Tripura', 101, 'IN', 'TR', 'state'),
+('Uttar Pradesh', 101, 'IN', 'UP', 'state'),
+('Uttarakhand', 101, 'IN', 'UK', 'state'),
+('West Bengal', 101, 'IN', 'WB', 'state');
